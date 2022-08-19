@@ -4,7 +4,10 @@ import com.consultAdd.model.Employee;
 import com.consultAdd.repository.EmployeeRepository;
 import com.consultAdd.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -24,13 +27,5 @@ public class EmployeeController {
     public String saveEmployee(@RequestBody Employee employee)
    {
        return employeeService.saveEmployee(employee);
-   }
-   @PutMapping("/putEmployee")
-    public String putEmployee(@RequestBody Employee employee){
-        return employeeService.putEmployee(employee);
-   }
-   @DeleteMapping("/deleteEmployee")
-    public String deleteEmployee(@RequestBody Employee employee){
-        return employeeService.deleteEmployee(employee);
    }
 }
